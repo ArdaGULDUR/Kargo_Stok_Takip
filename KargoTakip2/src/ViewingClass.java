@@ -45,6 +45,9 @@ public class ViewingClass {
     static JTextField calisanSifreTextField;
     static JTable staffTable;
     static JTextField getIdForChangePass;
+    static JButton exitButton;
+    static JButton exitButtonStaff;
+    static JButton exitButtonStock;
 
 
     public static void LoginScreen(){
@@ -165,11 +168,14 @@ public class ViewingClass {
         siparisDurumuLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel = new JLabel();
-        imgLabel.setIcon(new ImageIcon("D:\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Admin-icon.png"));
+        imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setBounds(550,10,150,150);
 
-        stockTab2.add(imgLabel);
+        exitButton = new JButton("ÇIKIŞ YAP");
+        exitButton.setBounds(10,170,150,30);
 
+        stockTab2.add(imgLabel);
+        stockTab2.add(exitButton);
         stockTab.add(stockTableSP);
         stockTab2.add(urunNoTextField);
         stockTab2.add(urunNoLabel);
@@ -268,9 +274,13 @@ public class ViewingClass {
         siparisDurumuLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel = new JLabel();
-        imgLabel.setIcon(new ImageIcon("D:\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Admin-icon.png"));
+        imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setBounds(550,10,150,150);
 
+        exitButtonStock = new JButton("ÇIKIŞ YAP");
+        exitButtonStock.setBounds(10,170,150,30);
+
+        stockTab2.add(exitButtonStock);
         stockTab2.add(imgLabel);
         stockTab.add(stockTableSP);
         stockTab2.add(urunNoTextField);
@@ -338,9 +348,13 @@ public class ViewingClass {
         calisanSifreLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel2 = new JLabel();
-        imgLabel2.setIcon(new ImageIcon("D:\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Admin-icon.png"));
+        imgLabel2.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel2.setBounds(550,10,150,150);
 
+        exitButtonStaff = new JButton("ÇIKIŞ YAP");
+        exitButtonStaff.setBounds(10,170,150,30);
+
+        staffTab2.add(exitButtonStaff);
         staffTab.add(staffTableSP);
         staffTab2.add(calisanIdTextField);
         staffTab2.add(imgLabel2);
@@ -411,7 +425,7 @@ public class ViewingClass {
         idLabel.setBounds(10,20,50,30);
 
         JLabel imgLabel = new JLabel();
-        imgLabel.setIcon(new ImageIcon("D:\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\sifre degistir.png"));
+        imgLabel.setIcon(new ImageIcon("images\\sifre degistir.png"));
         imgLabel.setBounds(150,220,100,100);
 
         panel.add(imgLabel);

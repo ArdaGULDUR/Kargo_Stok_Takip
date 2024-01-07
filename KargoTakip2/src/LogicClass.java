@@ -224,6 +224,11 @@ public class LogicClass {
             }
         });
 
+        ViewingClass.exitButtonStock.addActionListener(e -> {
+            ViewingClass.frame.setVisible(false);
+            ViewingClass.LoginScreen();
+        });
+
         //TODO:AREA WHERE STAFF OPERATIONS ARE CARRIED OUT
         //yeni çalışan eklemek için kullanılan button----------------------------------------------------------------------------------------------------------------------------
         ViewingClass.addButtonStaff.addActionListener(e -> {
@@ -355,6 +360,11 @@ public class LogicClass {
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
+        });
+
+        ViewingClass.exitButtonStaff.addActionListener(e -> {
+            ViewingClass.frame.setVisible(false);
+            ViewingClass.LoginScreen();
         });
     }
     public void StaffPanScreen(){
@@ -506,6 +516,11 @@ public class LogicClass {
                     throw new RuntimeException(ex);
                 }
             }
+        });
+
+        ViewingClass.exitButton.addActionListener(e -> {
+            ViewingClass.frame.setVisible(false);
+            ViewingClass.LoginScreen();
         });
     }
 
