@@ -367,7 +367,7 @@ public class LogicClass {
             ViewingClass.LoginScreen();
         });
     }
-    public void StaffPanScreen(){
+    public void StockPanScreen(){
         //TODO:AREA WHERE STOCK OPERATIONS ARE CARRIED OUT
         //yeni stok eklemek için kullanılan button-------------------------------------------------------------------------------------------------------------------------------
         ViewingClass.addButtonStock.addActionListener(new ActionListener() {

@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.table.TableModel;
 import java.awt.*;
 
 public class ViewingClass {
@@ -201,7 +200,7 @@ public class ViewingClass {
         frame.setVisible(true);
         frame.setResizable(false);
 
-        logicClass.StaffPanScreen();
+        logicClass.StockPanScreen();
     }
 
     public static void AdminPanScreen(){
