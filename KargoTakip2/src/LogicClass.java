@@ -357,6 +357,157 @@ public class LogicClass {
             }
         });
     }
+    public void StaffPanScreen(){
+        //TODO:AREA WHERE STOCK OPERATIONS ARE CARRIED OUT
+        //yeni stok eklemek için kullanılan button-------------------------------------------------------------------------------------------------------------------------------
+        ViewingClass.addButtonStock.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Statement statement;
+                try {
+                    String getMaxUrunId = "SELECT MAX(urunId) FROM urunler";
+                    statement = connectionDB.connection().createStatement();
+                    ResultSet resultSet = statement.executeQuery(getMaxUrunId);
+
+                    if (resultSet.next()){
+                        indexOfUrunId = resultSet.getInt(1) + 1;
+                    }
+
+                    try {
+                        String urunAd = ViewingClass.isimTextField.getText();
+                        String urunKategori = ViewingClass.kategoriTextField.getText();
+                        int subeNo = Integer.parseInt(ViewingClass.subeNoTextField.getText());
+                        int urunFiyat = Integer.parseInt(ViewingClass.fiyatTextField.getText());
+                        String urunSiparisDurum = ViewingClass.siparisDurumuTextField.getText();
+
+                        String sqlQuery = "CALL stokEkle(?,?,?,?,?,?)";
+                        PreparedStatement preparedStatement = connectionDB.connection().prepareStatement(sqlQuery);
+                        preparedStatement.setInt(1, indexOfUrunId);
+                        preparedStatement.setString(2,urunAd);
+                        preparedStatement.setString(3,urunKategori);
+                        preparedStatement.setInt(4,subeNo);
+                        preparedStatement.setInt(5,urunFiyat);
+                        preparedStatement.setString(6,urunSiparisDurum);
+
+                        preparedStatement.execute();
+
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        //stoktan veri silmek için kullanılan button-----------------------------------------------------------------------------------------------------------------------------
+        ViewingClass.deleteButtonStock.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int urunId = Integer.parseInt(ViewingClass.urunNoTextField.getText());
+                    String sqlQuery = "DELETE FROM urunler WHERE urunId="+urunId;
+
+                    PreparedStatement preparedStatement = connectionDB.connection().prepareStatement(sqlQuery);
+                    preparedStatement.executeUpdate();
+
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        //stoktaki veriyi güncellemek için kullanılan buton----------------------------------------------------------------------------------------------------------------------
+        ViewingClass.updateButtonStock.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String kategori = ViewingClass.kategoriTextField.getText();
+                    String isim = ViewingClass.isimTextField.getText();
+                    int fiyat = Integer.parseInt(ViewingClass.fiyatTextField.getText());
+                    int subeNo = Integer.parseInt(ViewingClass.subeNoTextField.getText());
+                    String siparisDurumu = ViewingClass.siparisDurumuTextField.getText();
+                    int urunNo = Integer.parseInt(ViewingClass.urunNoTextField.getText());
+
+                    Statement statement = connectionDB.connection().createStatement();
+                    String query = "UPDATE urunler SET  urunKategori='" +
+                            kategori + "' ,urunAd='" +isim+ "' ,urunFiyat=" +fiyat+ " ,subeNo=" +subeNo+ " ,urunSiparisDurum='" +siparisDurumu+
+                            "' WHERE urunId=" +urunNo+";";
+
+                    statement.execute(query);
+                    statement.executeUpdate(query);
+
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        //Tablodan seçilen ürünü textField'lara doldurmak için kullanılan button-------------------------------------------------------------------------------------------------
+        ViewingClass.stockTable.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int selectedRow = ViewingClass.stockTable.getSelectedRow();
+                String setToTextField;
+                String[] arrayForData = new String[ViewingClass.stockTable.getColumnCount()];
+                for (int i = 0; i < ViewingClass.stockTable.getColumnCount(); i++){
+                    setToTextField = (String) ViewingClass.stockTable.getValueAt(selectedRow, i);
+                    arrayForData[i] = setToTextField;
+                }
+                ViewingClass.urunNoTextField.setText(arrayForData[0]);
+                ViewingClass.kategoriTextField.setText(arrayForData[1]);
+                ViewingClass.isimTextField.setText(arrayForData[2]);
+                ViewingClass.fiyatTextField.setText(arrayForData[3]);
+                ViewingClass.subeNoTextField.setText(arrayForData[4]);
+                ViewingClass.siparisDurumuTextField.setText(arrayForData[5]);
+            }
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+        //Tabloyu yenilemek için kullanılan button-------------------------------------------------------------------------------------------------------------------------------
+        ViewingClass.refreshButtonStock.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String getStockFromDb = "SELECT * FROM urunler";
+                try {
+                    Statement statement = connectionDB.connection().createStatement();
+                    ResultSet resultSet = statement.executeQuery(getStockFromDb);
+                    int i = 0;
+                    while (resultSet.next()){
+                        int urunNo = resultSet.getInt("urunId");
+                        String kategori = resultSet.getString("urunKategori");
+                        String isim = resultSet.getString("urunAd");
+                        int fiyat = resultSet.getInt("urunFiyat");
+                        int subeNo = resultSet.getInt("subeNo");
+                        String siparisDurumu = resultSet.getString("urunSiparisDurum");
+
+                        ViewingClass.dataStock[i][0] = String.valueOf(urunNo);
+                        ViewingClass.dataStock[i][1] = String.valueOf(kategori);
+                        ViewingClass.dataStock[i][2] = String.valueOf(isim);
+                        ViewingClass.dataStock[i][3] = String.valueOf(fiyat);
+                        ViewingClass.dataStock[i][4] = String.valueOf(subeNo);
+                        ViewingClass.dataStock[i][5] = String.valueOf(siparisDurumu);
+                        i++;
+                    }
+
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
 
     public void ChangePasswordUILogic(){
         ViewingClass.backButton.addActionListener(e -> {
