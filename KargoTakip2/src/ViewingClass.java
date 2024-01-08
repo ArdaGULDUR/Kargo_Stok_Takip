@@ -167,11 +167,9 @@ public class ViewingClass {
         siparisDurumuLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel = new JLabel();
-<<<<<<< HEAD
         imgLabel.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\personel.png"));
-=======
         imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
->>>>>>> 1060b73cd165df5f172301db7357e53cb8d98426
+        imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setBounds(550,10,150,150);
 
         exitButton = new JButton("ÇIKIŞ YAP");
@@ -277,11 +275,9 @@ public class ViewingClass {
         siparisDurumuLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel = new JLabel();
-<<<<<<< HEAD
         imgLabel.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Admin-icon.png"));
-=======
         imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
->>>>>>> 1060b73cd165df5f172301db7357e53cb8d98426
+        imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setBounds(550,10,150,150);
 
         exitButtonStock = new JButton("ÇIKIŞ YAP");
@@ -355,11 +351,9 @@ public class ViewingClass {
         calisanSifreLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel2 = new JLabel();
-<<<<<<< HEAD
         imgLabel2.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Admin-icon.png"));
-=======
         imgLabel2.setIcon(new ImageIcon("images\\Admin-icon.png"));
->>>>>>> 1060b73cd165df5f172301db7357e53cb8d98426
+        imgLabel2.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel2.setBounds(550,10,150,150);
 
         exitButtonStaff = new JButton("ÇIKIŞ YAP");
@@ -436,11 +430,11 @@ public class ViewingClass {
         idLabel.setBounds(10,20,50,30);
 
         JLabel imgLabel = new JLabel();
-<<<<<<< HEAD
+
         imgLabel.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\sifre degistir.png"));
-=======
+
         imgLabel.setIcon(new ImageIcon("images\\sifre degistir.png"));
->>>>>>> 1060b73cd165df5f172301db7357e53cb8d98426
+        imgLabel.setIcon(new ImageIcon("images\\sifre degistir.png"));
         imgLabel.setBounds(150,220,100,100);
 
         panel.add(imgLabel);
