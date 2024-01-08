@@ -34,12 +34,12 @@ public class LogicClass {
 
                         if ((Objects.equals(ViewingClass.idTextField.getText(), id)) &&
                                 Objects.equals(ViewingClass.passwordTextField.getText(),password) &&
-                                (Objects.equals(position, "Müdür"))){
+                                (Objects.equals(position, "müdür"))){
                             flag = 1;
                             break;
                         }else if ((Objects.equals(ViewingClass.idTextField.getText(), id)) &&
                                 Objects.equals(ViewingClass.passwordTextField.getText(),password) &&
-                                (Objects.equals(position, "Çalışan"))){
+                                (Objects.equals(position, "işci"))){
                             flag = 2;
                             break;
                         }
@@ -196,7 +196,7 @@ public class LogicClass {
         ViewingClass.refreshButtonStock.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String getStockFromDb = "SELECT * FROM urunler";
+                String getStockFromDb = "SELECT * FROM urunler ORDER BY urunid";
                 try {
                     Statement statement = connectionDB.connection().createStatement();
                     ResultSet resultSet = statement.executeQuery(getStockFromDb);
@@ -335,7 +335,7 @@ public class LogicClass {
         });
         //Tabloyu yenilemek için kullanılan button-------------------------------------------------------------------------------------------------------------------------------
         ViewingClass.refreshButtonStaff.addActionListener(e -> {
-            String getStaffFromDb = "SELECT * FROM calisanlar";
+            String getStaffFromDb = "SELECT * FROM calisanlar ORDER BY calisanid";
             try {
                 Statement statement = connectionDB.connection().createStatement();
                 ResultSet resultSet = statement.executeQuery(getStaffFromDb);
@@ -490,7 +490,7 @@ public class LogicClass {
         ViewingClass.refreshButtonStock.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String getStockFromDb = "SELECT * FROM urunler";
+                String getStockFromDb = "SELECT * FROM urunler order by urunid";
                 try {
                     Statement statement = connectionDB.connection().createStatement();
                     ResultSet resultSet = statement.executeQuery(getStockFromDb);

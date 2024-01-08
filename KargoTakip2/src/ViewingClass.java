@@ -84,7 +84,7 @@ public class ViewingClass {
         girisLabel.setFont(new Font("GİRİŞ EKRANI", Font.PLAIN,20));
 
         JLabel imgLabel = new JLabel();
-        imgLabel.setIcon(new ImageIcon("D:\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Login.png"));
+        imgLabel.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Login.png"));
         imgLabel.setBounds(150,200,100,100);
 
         panel.add(idTextField);
@@ -167,6 +167,8 @@ public class ViewingClass {
         siparisDurumuLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel = new JLabel();
+        imgLabel.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\personel.png"));
+        imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setBounds(550,10,150,150);
 
@@ -273,6 +275,8 @@ public class ViewingClass {
         siparisDurumuLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel = new JLabel();
+        imgLabel.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Admin-icon.png"));
+        imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel.setBounds(550,10,150,150);
 
@@ -347,6 +351,8 @@ public class ViewingClass {
         calisanSifreLabel.setBounds(180,210,100,30);
 
         JLabel imgLabel2 = new JLabel();
+        imgLabel2.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\Admin-icon.png"));
+        imgLabel2.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel2.setIcon(new ImageIcon("images\\Admin-icon.png"));
         imgLabel2.setBounds(550,10,150,150);
 
@@ -424,6 +430,10 @@ public class ViewingClass {
         idLabel.setBounds(10,20,50,30);
 
         JLabel imgLabel = new JLabel();
+
+        imgLabel.setIcon(new ImageIcon("C:\\Users\\berka\\OneDrive\\Belgeler\\GitHub\\Kargo_Stok_Takip\\KargoTakip2\\src\\images\\sifre degistir.png"));
+
+        imgLabel.setIcon(new ImageIcon("images\\sifre degistir.png"));
         imgLabel.setIcon(new ImageIcon("images\\sifre degistir.png"));
         imgLabel.setBounds(150,220,100,100);
 
